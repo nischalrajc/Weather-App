@@ -19,7 +19,6 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log(data)
         setWeatherData(data)
       })
       .catch((error) => {
@@ -46,10 +45,35 @@ function App() {
 
       <div className='w-1/3 h-1/3 p-10 mt-40 grid grid-cols-2 gap-6'>
         <h2 className='text-slate-200 col-span-2'>Today's Highlights</h2>
-        <Highlights />
-        <Highlights />
-        <Highlights />
-        <Highlights />
+        <Highlights
+          stats={{
+            tittle:"Wind Status",
+            value:weatherData?.current?.wind_mph,
+            unit:"mph",
+            direction:weatherData?.current?.wind_dir
+          }}
+        />
+        <Highlights 
+         stats={{
+          tittle:"Humidity",
+          value:weatherData?.current?.humidity,
+          unit:"%",
+        }}
+        />
+        <Highlights 
+         stats={{
+          tittle:"Visibility",
+          value:weatherData?.current?.vis_miles,
+          unit:"miles",
+        }}
+        />
+        <Highlights 
+         stats={{
+          tittle:"Air Pressure",
+          value:weatherData?.current?.pressure_mb,
+          unit:"mb",
+        }}
+        />
       </div>
     </h1>
   )
