@@ -45,8 +45,4 @@ To run this project locally, follow these steps:
 - Enter the city name to get the current weather information.
 - The app will display the temperature, weather conditions, and other relevant data.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
 
